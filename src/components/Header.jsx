@@ -16,7 +16,7 @@ export default function Header() {
           to="/products" 
           className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
         >
-          Sản phẩm
+          Danh mục
         </NavLink>
         <NavLink 
           to="/cart" 
