@@ -73,20 +73,17 @@ body {
   color: #f1c40f; /* nổi bật khi hover/active */
 }
 
-/* Container & Grid */
+/* Container*/
 .container {
   padding: 30px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 20px;
-}
 
 /* Product Card */
 .product-card {
+  width: 100%; /* chiếm full container grid item */
+  max-width: 250px; /* giới hạn max để thống nhất */
   border: 1px solid #ddd;
   padding: 15px;
   border-radius: 10px;
@@ -94,41 +91,71 @@ body {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
   background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* giữ khoảng cách đều */
 }
+
 .product-card img {
   width: 100%;
-  height: 200px; /* fix chiều cao ảnh */
+  height: 200px; /* fix chiều cao */
   object-fit: cover;
   border-radius: 8px;
+  margin-bottom: 10px;
 }
+
 .product-card h3 {
-  margin: 10px 0 5px;
   font-size: 18px;
   color: #333;
+  margin: 5px 0;
+  min-height: 48px; /* để các tên dài cũng đồng đều */
 }
+
 .product-card p {
   font-weight: bold;
   color: #e74c3c;
   margin: 5px 0 10px;
+  min-height: 22px; /* tránh bị nhảy khi giá khác nhau */
 }
+
+/* button container */
+.product-card-actions {
+  display: flex;
+  justify-content: space-between; /* 2 button cách đều */
+  gap: 10px; /* khoảng cách giữa button */
+  margin-top: auto; /* đẩy xuống dưới */
+}
+
 .product-card .btn {
-  display: inline-block;
-  padding: 10px 15px;
-  background: #2c3e50; /* màu cũ */
+  flex: 1; /* button đều nhau */
+  padding: 10px 12px;
+  background: #2c3e50;
   color: white;
   border-radius: 5px;
   text-decoration: none;
   font-weight: 500;
-  transition: background 0.3s;
+  font-size: 14px;
+  transition: background 0.3s, transform 0.2s;
+  text-align: center;
 }
 .product-card .btn:hover {
-  background: #34495e; /* tối hơn khi hover */
+  background: #34495e;
   transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
+
 .product-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Grid container */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  column-gap: 30px; /* khoảng cách ngang giữa các card */
+  row-gap: 40px;    /* khoảng cách dọc giữa các card */
+  padding: 20px;
+  justify-items: center; /* căn giữa các card trong cột */
 }
 
 /* Form Login */
@@ -167,4 +194,56 @@ body {
 .form .btn:hover {
   background: #34495e;
   transform: translateY(-2px);
+}
+
+/* Giới thiệu tổng quan */
+.intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.intro h1 {
+  font-size: 28px;
+  color: #2c3e50;
+}
+.intro p {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Khuyến mãi */
+.promotions .promo-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.promo-card {
+  flex: 1;
+  min-width: 250px;
+  padding: 20px;
+  background: #f1c40f;
+  color: #fff;
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Lời chứng thực */
+.testimonials .testimonial-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.testimonial-card {
+  flex: 1;
+  min-width: 250px;
+  padding: 20px;
+  background: #ecf0f1;
+  border-radius: 10px;
+  text-align: center;
+}
+.testimonial-card span {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #2c3e50;
 }

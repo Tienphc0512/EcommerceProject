@@ -4,9 +4,10 @@ import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Login from "./pages/Login";
-import Header from "./components/Header";
 import Register from "./pages/Register";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
+
 function App() {
   return (
     <Router>
