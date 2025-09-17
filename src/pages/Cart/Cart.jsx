@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 
 export default function Cart() {
   const { cartItems, removeFromCart, clearCart } = useContext(CartContext);
@@ -12,7 +12,10 @@ export default function Cart() {
       </div>
     );
 
-  const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const total = cartItems.reduce(
+    (sum, item) => sum + item.price * item.quantity,
+    0
+  );
 
   return (
     <div className="container">
@@ -28,21 +31,28 @@ export default function Cart() {
           </tr>
         </thead>
         <tbody>
-          {cartItems.map(item => (
-            <tr key={item.id} style={{ textAlign: "center", borderBottom: "1px solid #ddd" }}>
+          {cartItems.map((item) => (
+            <tr
+              key={item.id}
+              style={{ textAlign: "center", borderBottom: "1px solid #ddd" }}
+            >
               <td>{item.name}</td>
               <td>{item.price.toLocaleString()} đ</td>
               <td>{item.quantity}</td>
               <td>{(item.price * item.quantity).toLocaleString()} đ</td>
               <td>
-                <button className="btn" onClick={() => removeFromCart(item.id)}>Xóa</button>
+                <button className="btn" onClick={() => removeFromCart(item.id)}>
+                  Xóa
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
       <h3>Tổng cộng: {total.toLocaleString()} đ</h3>
-      <button className="btn" onClick={clearCart}>Xóa hết giỏ hàng</button>
+      <button className="btn" onClick={clearCart}>
+        Xóa hết giỏ hàng
+      </button>
     </div>
   );
 }
