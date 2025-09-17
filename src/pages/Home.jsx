@@ -1,28 +1,42 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import CategoryBar from "../components/CategoryBar";
 import products from "../data/products";
 import ProductCard from "../components/ProductCard";
+import FooterIntro from "../components/Footer";
 
-export default function Home() {
+const Home = () => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (category) => {
+    navigate(`/products?category=${category}`);
+  };
+
   return (
     <div className="container">
-      {/* Giới thiệu tổng quan */}
+      {/* Giới thiệu */}
       <section className="intro">
         <h1>Chào mừng đến với Website Bán Phần Mềm</h1>
         <p>
-          Khám phá các phần mềm chất lượng, các gói khuyến mãi hấp dẫn và trải nghiệm dịch vụ hỗ trợ tuyệt vời.
+          Khám phá các phần mềm chất lượng, các gói khuyến mãi hấp dẫn và trải
+          nghiệm dịch vụ hỗ trợ tuyệt vời.
         </p>
       </section>
+
+      {/* Thanh category */}
+      <CategoryBar onCategoryClick={handleCategoryClick} />
 
       {/* Sản phẩm nổi bật */}
       <section className="featured-products">
         <h2>Sản phẩm nổi bật</h2>
         <div className="grid">
-          {products.map(p => (
+          {products.slice(0, 6).map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
         </div>
       </section>
 
-      {/* Chương trình khuyến mãi */}
+      {/* Khuyến mãi */}
       <section className="promotions">
         <h2>Chương trình khuyến mãi</h2>
         <div className="promo-cards">
@@ -37,20 +51,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/*đánh giá từ khách hàng */}
-      <section className="testimonials">
-        <h2>Đánh giá</h2>
-        <div className="testimonial-cards">
-          <div className="testimonial-card">
-            <p>"Phần mềm dễ sử dụng, giao diện trực quan, rất hài lòng!"</p>
-            <span>- Nguyễn Văn A</span>
-          </div>
-          <div className="testimonial-card">
-            <p>"Dịch vụ hỗ trợ nhanh chóng và chuyên nghiệp."</p>
-            <span>- Trần Thị B</span>
-          </div>
-        </div>
-      </section>
+      {/* Giới thiệu cuối trang giống Woku Shop */}
+      <FooterIntro />
     </div>
   );
-}
+};
+
+export default Home;
