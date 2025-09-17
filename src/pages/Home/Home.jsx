@@ -1,5 +1,6 @@
-import products from "../data/products";
-import ProductCard from "../components/ProductCard";
+import products from "../../data/products";
+import ProductCard from "../../components/productCard/ProductCard";
+import "./home.css";
 
 export default function Home() {
   return (
@@ -8,7 +9,8 @@ export default function Home() {
       <section className="intro">
         <h1>Chào mừng đến với Website Bán Phần Mềm</h1>
         <p>
-          Khám phá các phần mềm chất lượng, các gói khuyến mãi hấp dẫn và trải nghiệm dịch vụ hỗ trợ tuyệt vời.
+          Khám phá các phần mềm chất lượng, các gói khuyến mãi hấp dẫn và trải
+          nghiệm dịch vụ hỗ trợ tuyệt vời.
         </p>
       </section>
 
@@ -16,7 +18,7 @@ export default function Home() {
       <section className="featured-products">
         <h2>Sản phẩm nổi bật</h2>
         <div className="grid">
-          {products.map(p => (
+          {products.map((p) => (
             <ProductCard key={p.id} product={p} />
           ))}
         </div>
