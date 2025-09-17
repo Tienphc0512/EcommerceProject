@@ -13,6 +13,7 @@ import "./App.css";
 function App() {
   return (
     <Router>
+<<<<<<< HEAD
       <div className="app-container">
         <Header />
         <main className="main-content">
@@ -28,6 +29,17 @@ function App() {
         </main>
         <Footer />
       </div>
+=======
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+>>>>>>> upstream/main
     </Router>
   );
 }

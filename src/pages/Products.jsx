@@ -33,7 +33,9 @@ export default function Products() {
 
   return (
     <div className="container">
-      <h2>Tất cả sản phẩm</h2>
+      <h2>
+        {category === "All" ? "Tất cả sản phẩm" : `Sản phẩm: ${category}`}
+      </h2>
 
       {/* Bộ lọc */}
       <div
