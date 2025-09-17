@@ -1,3 +1,5 @@
+import React from "react";
+
 export default function Register() {
   return (
     <div className="container">
@@ -7,7 +9,9 @@ export default function Register() {
         <input type="text" placeholder="Email" />
         <input type="password" placeholder="Mật khẩu" />
         <input type="password" placeholder="Xác nhận mật khẩu" />
-        <button type="submit" className="btn">Đăng ký</button>
+        <button type="submit" className="btn">
+          Đăng ký
+        </button>
       </form>
     </div>
   );

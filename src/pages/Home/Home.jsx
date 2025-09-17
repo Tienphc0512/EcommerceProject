@@ -1,9 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import CategoryBar from "../components/CategoryBar";
-import products from "../data/products";
-import ProductCard from "../components/ProductCard";
-import FooterIntro from "../components/Footer";
+import CategoryBar from "../../components/CategoryBar/CategoryBar";
+import products from "../../data/products";
+import ProductCard from "../../components/productCard/ProductCard";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -50,9 +49,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Giới thiệu cuối trang giống Woku Shop */}
-      <FooterIntro />
     </div>
   );
 };

@@ -8,19 +8,27 @@ const Footer = () => {
       <div className="footer-main">
         {/* Logo + Social */}
         <div className="footer-logo-social">
-          <img
-            src="/logo.png"
-            alt="Demo Shop Logo"
-            className="footer-logo"
-          />
+          <img src="/logo.png" alt="Demo Shop Logo" className="footer-logo" />
           <div className="footer-social">
-            <a href="https://www.facebook.com/amitgroup.vn" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.facebook.com/amitgroup.vn"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaFacebookF />
             </a>
-            <a href="https://www.facebook.com/amitgroup.vn" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.facebook.com/amitgroup.vn"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaInstagram /> {/* ✅ logo Instagram */}
             </a>
-            <a href="https://www.youtube.com/@AmitGROUPmkt" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.youtube.com/@AmitGROUPmkt"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaYoutube />
             </a>
           </div>
